@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.bd.admobTest</id>
+    <name>admobTest</name>
+    <version>1.0</version>
+    <publisher>GSL001</publisher>
+    <url>http://</url>
+    <description>not specified</description>
+    <copyright>2014 by GSL001</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>48ed2815-23cb-4971-9ba5-dc279dba026c</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+                <key>CFBundleURLTypes</key>
+                <array>
+                    <dict>
+                        <key>CFBundleTypeRole</key>
+                        <string>Editor</string>
+                        <key>CFBundleURLName</key>
+                        <string>com.bd.admobTest</string>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                            <string>touchtest-f010ccb9-6adc-491e-b3f9-aced42771c23</string>
+                        </array>
+                    </dict>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:installLocation="preferExternal"
+            android:versionCode="1" android:versionName="1.0">
+            <uses-sdk android:maxSdkVersion="19"
+                android:minSdkVersion="11" android:targetSdkVersion="16"/>
+            <application>
+                <activity
+                    android:configChanges="keyboardHidden|orientation"
+                    android:label="admobTest"
+                    android:name=".AdmobtestActivity" android:theme="@style/Theme.Titanium">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                    <intent-filter>
+                        <data android:scheme="touchtest-f010ccb9-6adc-491e-b3f9-aced42771c23"/>
+                        <action android:name="android.intent.action.VIEW"/>
+                        <category android:name="android.intent.category.BROWSABLE"/>
+                        <category android:name="android.intent.category.DEFAULT"/>
+                    </intent-filter>
+                </activity>
+                <service android:enabled="true" android:exported="false" android:name="com.soasta.android.touchtest.TouchTestService"/>
+            </application>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+            <uses-permission android:name="android.permission.GET_TASKS"/>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module deploy-type="test" platform="iphone" version="1.0">com.soasta.touchtest</module>
+        <module platform="android">ti.admob</module>
+        <module deploy-type="development" platform="android" version="1.0">com.soasta.touchtest</module>
+        <module platform="iphone">ti.admob</module>
+        <module deploy-type="test" platform="android" version="1.0">com.soasta.touchtest</module>
+        <module deploy-type="development" platform="iphone" version="1.0">com.soasta.touchtest</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
+        <target device="tizen">false</target>
+    </deployment-targets>
+    <sdk-version>3.2.3.GA</sdk-version>
+    <property name="com-soasta-touchtest-version" type="string">7040.132</property>
+    <plugins>
+        <plugin>com.soasta.touchtest.android</plugin>
+    </plugins>
+    <property name="com-soasta-touchtest-ios-appId" type="string">226365</property>
+</ti:app>
